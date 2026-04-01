@@ -479,7 +479,7 @@ export default function App() {
       <Route path="/patient/add-appointment" element={<Patient_AddAppointment />} />
       <Route path="/patient/prescriptions" element={<Patient_Prescriptions />} />
 
-      <Route path="/hospital/login" element={<Hospital_Login />} />
+      <Route path="/hospital/login" element={<Home />} />
 
       <Route path="/aesthetic/login" element={<Aesthetic_Login />} />
 
