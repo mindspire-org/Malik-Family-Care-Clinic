@@ -1,10 +1,18 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ModuleCard from '../components/ModuleCard'
 import { Stethoscope, FlaskConical, Pill, FileText, PhoneIncoming, Droplets, User } from 'lucide-react'
 import { useRef } from 'react'
 import './home.css'
 
 export default function Home() {
+  const navigate = useNavigate()
   const heroRef = useRef<HTMLDivElement>(null)
+  
+  // Redirect to hospital admin login automatically
+  useEffect(() => {
+    navigate('/hospital/login')
+  }, [navigate])
   const onHeroMove = (e: React.MouseEvent) => {
     const el = heroRef.current
     if (!el) return
