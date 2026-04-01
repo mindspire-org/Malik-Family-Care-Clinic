@@ -24,7 +24,7 @@ export default function Doctor_Sidebar({ collapsed = false }: { collapsed?: bool
       await hospitalApi.logoutHospitalUser(u?.username||'doctor')
     } catch {}
     try { localStorage.removeItem('doctor.session') } catch {}
-    navigate('/hospital/login')
+    navigate('/')
   }
   return (
     <aside

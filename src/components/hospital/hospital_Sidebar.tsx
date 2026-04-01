@@ -333,7 +333,7 @@ export default function Hospital_Sidebar({ collapsed = false }: { collapsed?: bo
               await hospitalApi.logoutHospitalUser(u?.username||'')
             } catch {}
             try { localStorage.removeItem('hospital.session') } catch {}
-            navigate('/hospital/login')
+            navigate('/')
           }}
           title={collapsed ? 'Logout' : undefined}
           className={collapsed ? 'w-full inline-flex items-center justify-center rounded-md p-2 text-sm font-medium' : 'w-full inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium'}
