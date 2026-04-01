@@ -44,7 +44,7 @@ export async function list(req: Request, res: Response) {
   if (phoneN) {
     try {
       const patient = await LabPatient.findOne({ phoneNormalized: phoneN }).select('_id').lean()
-      if (patient?._id) patientIds.add(String((patient as any)._id))
+      if (patient && '_id' in patient && patient._id) patientIds.add(String(patient._id))
     } catch {}
   }
 
@@ -102,7 +102,7 @@ export async function getById(req: Request, res: Response) {
   if (phoneN) {
     try {
       const patient = await LabPatient.findOne({ phoneNormalized: phoneN }).select('_id').lean()
-      if (patient?._id) patientIds.add(String((patient as any)._id))
+      if (patient && '_id' in patient && patient._id) patientIds.add(String(patient._id))
     } catch {}
   }
 

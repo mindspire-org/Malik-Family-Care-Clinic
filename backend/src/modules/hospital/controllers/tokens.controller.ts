@@ -547,7 +547,7 @@ export async function list(req: Request, res: Response){
           scheduleId: String(row.scheduleId), 
           slotNo: Number(row.slotNo) 
         }).select('portal').lean()
-        if (appt?.portal) {
+        if (appt && 'portal' in appt && appt.portal) {
           row.originalPortal = appt.portal
         }
       } catch {}
